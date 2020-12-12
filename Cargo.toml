@@ -1,0 +1,20 @@
+[package]
+name = "rusty_string_comp"
+version = "0.1.0"
+authors = ["Andrew Lamb <andrew@nerdnetworks.org>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+arrow = {version="2.0.0", features = ["simd"]}
+
+# Can also use development version of arrow
+# https://github.com/apache/arrow/commit/db20c7a611adac7be5cdd9350792852345f5b6b4
+#arrow = { git = "https://github.com/apache/arrow.git", rev = "db20c7a611adac7be5cdd9350792852345f5b6b4" , features = ["simd"] }
+
+
+[profile.release]
+debug = true
+
+[profile.bench]
+debug = true
